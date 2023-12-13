@@ -40,3 +40,9 @@ docker container rm -f <f39>
 
 -- deleting image docker/getting-started
 docker image rm docker/getting-started
+
+-- pull postgres
+docker pull postgres
+
+-- run postgres
+docker run --name some-postgres -e POSTGRES_PASSWORD=mysecretpassword -d postgres
