@@ -8,4 +8,20 @@ docker container run hello-world
 docker container ls -a
 docker ps -a
 
- 
+-- help docker container
+docker container --help
+
+-- remove container
+docker container rm <id or name>
+
+-- remove all stopped containers
+docker container prune
+
+-- stop container
+docker stop <bc0 79d 6a7>
+
+--help docker image
+docker image --help
+
+-- remove image
+docker image rm <name-image>
