@@ -25,3 +25,8 @@ docker image --help
 
 -- remove image
 docker image rm <name-image>
+
+-- public and detached modes
+docker container run -d -p 80:80 docker/getting-started
+-- public and detached modes -shortcut
+docker container run -dp 4000:80 docker/getting-started
