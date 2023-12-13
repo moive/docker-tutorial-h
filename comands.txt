@@ -46,3 +46,6 @@ docker pull postgres
 
 -- run postgres
 docker run --name some-postgres -e POSTGRES_PASSWORD=mysecretpassword -d postgres
+
+-- added port
+ docker run --name some-postgres -e POSTGRES_PASSWORD=mysecretpassword -dp 5433:5432 postgres
