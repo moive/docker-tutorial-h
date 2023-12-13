@@ -30,3 +30,13 @@ docker image rm <name-image>
 docker container run -d -p 80:80 docker/getting-started
 -- public and detached modes -shortcut
 docker container run -dp 4000:80 docker/getting-started
+
+-- stop containter and start
+docker container stop f39
+docker container start f39
+
+-- force delete container
+docker container rm -f <f39>
+
+-- deleting image docker/getting-started
+docker image rm docker/getting-started
