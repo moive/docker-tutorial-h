@@ -1,0 +1,11 @@
+-- download image hello-world
+docker pull hello-world
+
+-- create a container for image hello-world
+docker container run hello-world
+
+-- list all containers
+docker container ls -a
+docker ps -a
+
+ 
