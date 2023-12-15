@@ -66,3 +66,24 @@ postgres::14-alpine3.19
 
 -- remove containers at the same time
 docker container rm -f <5ce> <710>
+
+-- pull mariadb jammy
+docker pull mariadb:jammy
+
+-- create container with password random
+docker container run `
+>> -e MARIADB_RANDOM_ROOT_PASSWORD=yes `
+>> -dp 3307:3306 `
+>> mariadb:jammy
+
+-- get id container
+docker container ls
+
+-- get generate password
+docker container logs <id_container>
+
+-- view logs live
+docker container logs -f <id_container>
+
+--remove images postgres
+docker image rm <id_image> <id_image>
