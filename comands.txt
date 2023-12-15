@@ -97,3 +97,23 @@ docker container run `
 -e MARIADB_DATABASE=world-db `
 -dp 3307:3306 `
 mariadb:jammy
+
+--create volume
+docker volume create world-db
+
+--list volumes
+docker volume ls
+
+-- inspect volume
+docker volume inspect world-db
+
+-- create container with volume
+docker container run `
+--name world-db `
+-e MARIADB_USER=example-user `
+-e MARIADB_PASSWORD=user-password `
+-e MARIADB_ROOT_PASSWORD=root-secret-password `
+-e MARIADB_DATABASE=world-db `
+-dp 3307:3306 `
+--volume world-db:/var/lib/mysql `
+mariadb:jammy
