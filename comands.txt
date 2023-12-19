@@ -120,3 +120,16 @@ mariadb:jammy
 
 -- create and run container phpmyadmin:5.2.1-apache
 docker container run --name phpmyadmin -dp 8080:80 -e PMA_ARBITRARY=1 phpmyadmin:5.2.1-apache
+
+--create network
+docker network create world-red
+
+--list all network
+docker network ls
+
+-- connect network to containers
+docker network connect world-red phpmyadmin
+docker network connect world-red world-db
+
+--docker network inspect
+docker network inspect world-red
