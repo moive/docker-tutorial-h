@@ -133,3 +133,19 @@ docker network connect world-red world-db
 
 --docker network inspect
 docker network inspect world-red
+
+-- create containter mariadb with world-db and network
+docker container run `
+--name world-db `
+-e MARIADB_USER=example-user `
+-e MARIADB_PASSWORD=user-password `
+-e MARIADB_ROOT_PASSWORD=root-secret-password `
+-e MARIADB_DATABASE=world-db `
+-dp 3307:3306 `
+--volume world-db:/var/lib/mysql `
+--network world-red `
+mariadb:jammy
+
+
+-- create and run container phpmyadmin:apache with network
+docker container run --name phpmyadmin -dp 8080:80 -e PMA_ARBITRARY=1 --network world-red phpmyadmin:apache
