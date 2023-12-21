@@ -171,3 +171,8 @@ sh -c "npm install && npm run start:dev"
 
 -- view logs in terminal
 docker container logs -f <id_container exa: 650>
+
+-- interactive terminal
+docker exec -it 462 /bin/sh
+
+-- enter world: exit for end terminal interactive
