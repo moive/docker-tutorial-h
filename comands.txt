@@ -186,7 +186,7 @@ docker container run `
 -d `
 --name postgres-db `
 -e POSTGRES_PASSWORD=123456 `
--v postgres-db:/varlib/postgresql/data `
+-v postgres-db:/var/lib/postgresql/data `
 postgres:15.1
 
 -- run pgAdmin
@@ -206,3 +206,10 @@ docker network connect postgres-net <id container>
 
 -- verified network to container
 docker network inspect postgres-net
+
+
+-- run compose yml
+docker compose up
+
+-- remove containers compose yml
+docker compose down
