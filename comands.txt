@@ -213,3 +213,6 @@ docker compose up
 
 -- remove containers compose yml
 docker compose down
+
+-- follow logs compose
+docker compose logs -f
