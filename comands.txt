@@ -216,3 +216,7 @@ docker compose down
 
 -- follow logs compose
 docker compose logs -f
+
+-- string connection with auth
+mongodb://strider:123456@localhost:27018
+
