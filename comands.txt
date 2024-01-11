@@ -231,3 +231,12 @@ docker container run cron-ticker
 
 --stop container 
 docker stop <id>
+
+-- rename tags
+docker image tag cron-ticker cron-ticker:bufalo
+
+-- view all images with tags
+docker image ls
+
+-- rebuild image with new tag
+docker build --tag cron-ticker:bufalo .

@@ -4,7 +4,7 @@ let times = 0;
 
 cron.schedule('1-59/5 * * * * *', () => {
   times++;
-  console.log('Tick every 5 second', times);
+  console.log('Tick every 5 second 😀 ', times);
 });
 
 console.log('start')
