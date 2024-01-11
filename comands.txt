@@ -220,3 +220,14 @@ docker compose logs -f
 -- string connection with auth
 mongodb://strider:123456@localhost:27018
 
+
+-- build image
+docker build --tag cron-ticker .
+-- show image created
+docker image ls
+
+--run container
+docker container run cron-ticker
+
+--stop container 
+docker stop <id>
