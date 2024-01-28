@@ -256,3 +256,10 @@ docker container run moive/cron-ticker:bufalo
 docker image ls
 
 --rebuild image with test files
+docker build -t moive30/cron-ticker:mapache .
+
+-- mount image in container
+docker container run -d moive30/cron-ticker:mapache
+
+-- navigation files docker
+docker exec -it <id-container 15a> /bin/sh
