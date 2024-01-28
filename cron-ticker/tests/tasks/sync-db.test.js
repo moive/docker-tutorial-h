@@ -1,4 +1,4 @@
-const { syncDB } = require("../tasks/sync-db")
+const { syncDB } = require("../../tasks/sync-db")
 
 describe('Test sync-DB', () => { 
   test('should run process two times', () => { 

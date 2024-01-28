@@ -251,3 +251,8 @@ docker push moive30/cron-ticker:bufalo
 
 -- pull image cron-ticker:bufalo
 docker container run moive/cron-ticker:bufalo
+
+-- verify image
+docker image ls
+
+--rebuild image with test files
