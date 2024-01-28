@@ -248,3 +248,6 @@ docker image tag cron-ticker:bufalo moive30/cron-ticker:bufalo
 
 -- push image
 docker push moive30/cron-ticker:bufalo
+
+-- pull image cron-ticker:bufalo
+docker container run moive/cron-ticker:bufalo
