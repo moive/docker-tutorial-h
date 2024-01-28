@@ -16,5 +16,11 @@ COPY . .
 # Run test
 RUN npm run test
 
+# Deleting files innecessary from production
+RUN rm -rf tests && rm -rf node_modules
+
+# Only install of production
+RUN npm install --prod
+
 # Comand run the image
 CMD [ "node","app.js" ]
