@@ -240,3 +240,11 @@ docker image ls
 
 -- rebuild image with new tag
 docker build --tag cron-ticker:bufalo .
+
+-- create repository at dockerhub
+-- dockerhub show: docker push moive30/cron-ticker:tagname
+--rename image to name/dockerhub
+docker image tag cron-ticker:bufalo moive30/cron-ticker:bufalo
+
+-- push image
+docker push moive30/cron-ticker:bufalo
