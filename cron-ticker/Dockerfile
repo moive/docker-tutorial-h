@@ -1,6 +1,7 @@
 # /app /usr /lib
 # FROM --platform=linux/amd64 node:21-alpine3.18
-FROM node:21-alpine3.18
+FROM --platform=$BUILDPLATFORM node:21-alpine3.18
+# FROM node:21-alpine3.18
 
 # cd app
 WORKDIR /app

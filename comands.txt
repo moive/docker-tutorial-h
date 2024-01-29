@@ -263,3 +263,12 @@ docker container run -d moive30/cron-ticker:mapache
 
 -- navigation files docker
 docker exec -it <id-container 15a> /bin/sh
+
+-- create buildx mybuilder and using
+docker buildx create --name mybuilder --bootstrap --use
+
+-- inspect buildx
+docker buildx inspect
+
+-- Build the Dockerfile with buildx, passing the list of architectures to build
+docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 -t moive30/cron-ticker:polar --push .
