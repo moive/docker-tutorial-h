@@ -272,3 +272,12 @@ docker buildx inspect
 
 -- Build the Dockerfile with buildx, passing the list of architectures to build
 docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 -t moive30/cron-ticker:polar --push .
+
+-- list all buildx
+docker buildx ls
+
+-- switch buildx default
+buildx use default
+
+-- remove mybuilder
+docker buildx rm mybuilder
