@@ -300,3 +300,6 @@ docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 -t moive30/c
 
 -- inspect
 docker buildx imagetools inspect moive30/cron-ticker:cat
+
+-- remove container and volumes
+docker compose down --volumes

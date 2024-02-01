@@ -1,3 +1,8 @@
+FROM node:19-alpine3.15 as dev
+WORKDIR /app
+COPY package.json ./
+RUN npm install --frozen-lockfile
+CMD ["npm","run","start:dev"]
 
 FROM node:19-alpine3.15 as dev-deps
 WORKDIR /app
@@ -15,7 +20,7 @@ RUN npm build
 FROM node:19-alpine3.15 as prod-deps
 WORKDIR /app
 COPY package.json package.json
-RUN npm install --frozen-lockfile
+RUN npm install --prod --frozen-lockfile
 
 
 FROM node:19-alpine3.15 as prod
