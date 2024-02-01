@@ -281,3 +281,12 @@ buildx use default
 
 -- remove mybuilder
 docker buildx rm mybuilder
+
+--runing stages
+docker build -t moive30/cron-ticker:latest .
+
+-- run image in container
+docker container run moive30/cron-ticker
+
+-- pushed image latest in dockerhub
+docker push moive30/cron-ticker

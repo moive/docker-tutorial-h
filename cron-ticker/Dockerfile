@@ -1,28 +1,32 @@
-# /app /usr /lib
-# FROM --platform=linux/amd64 node:21-alpine3.18
-FROM --platform=$BUILDPLATFORM node:21-alpine3.18
-# FROM node:21-alpine3.18
-
+# Dependencies development
+FROM node:21-alpine3.18 as deps
 # cd app
 WORKDIR /app
-
 # COPY source dest  #Dest /app
-COPY app.js package.json ./
-
+COPY package.json ./
 # Install package
 RUN npm install
 
-# add test
+# Build and test
+FROM node:21-alpine3.18 as builder
+WORKDIR /app
+COPY --from=deps /app/node_modules ./node_modules
 COPY . .
-
-# Run test
 RUN npm run test
+# for building production
+# RUN npm run build
 
-# Deleting files innecessary from production
-RUN rm -rf tests && rm -rf node_modules
-
-# Only install of production
+# Dependencies for production
+FROM node:21-alpine3.18 as prod-deps
+WORKDIR /app
+COPY package.json ./
 RUN npm install --prod
 
+
+FROM node:21-alpine3.18 as runner
+WORKDIR /app
+COPY --from=prod-deps /app/node_modules ./node_modules
+COPY app.js ./
+COPY tasks/ ./tasks
 # Comand run the image
 CMD [ "node","app.js" ]
