@@ -290,3 +290,13 @@ docker container run moive30/cron-ticker
 
 -- pushed image latest in dockerhub
 docker push moive30/cron-ticker
+
+-- created custom buildx
+docker buildx create --name mybuilder --bootstrap --use
+docker buildx ls
+
+-- added architectures
+docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 -t moive30/cron-ticker:cat --push .
+
+-- inspect
+docker buildx imagetools inspect moive30/cron-ticker:cat
