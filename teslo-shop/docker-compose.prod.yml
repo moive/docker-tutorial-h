@@ -8,7 +8,7 @@ services:
       target: prod
       dockerfile: Dockerfile
     # command: npm run start:dev
-
+    image: moive30/teslo-shop:tiger
     container_name: nest-app
     ports:
       - ${PORT}:${PORT}
