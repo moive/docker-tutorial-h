@@ -309,3 +309,6 @@ docker compose -f docker-compose.prod.yml build
 
 -- run compose-prod
 docker compose -f docker-compose.prod.yml up
+
+--
+docker buildx build --platform linux/amd64,linux/arm64 -t moive30/teslo-shop:latest --push .
