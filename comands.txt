@@ -303,3 +303,9 @@ docker buildx imagetools inspect moive30/cron-ticker:cat
 
 -- remove container and volumes
 docker compose down --volumes
+
+-- buiding for production
+docker compose -f docker-compose.prod.yml build
+
+-- run compose-prod
+docker compose -f docker-compose.prod.yml up

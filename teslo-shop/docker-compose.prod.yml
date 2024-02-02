@@ -5,12 +5,10 @@ services:
   app:
     build:
       context: .
-      target: ${STAGE}
+      target: prod
       dockerfile: Dockerfile
     # command: npm run start:dev
-    volumes:
-      - .:/app/
-      - /app/node_modules
+
     container_name: nest-app
     ports:
       - ${PORT}:${PORT}
