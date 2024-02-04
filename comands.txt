@@ -334,3 +334,7 @@ docker build -t heroes-app . --no-cache
 
 -- runc container port 8080 with heroes-app image
 docker container run -p 8081:80 heroes-app 
+
+-- recreate image heroes-app with new config nginx conf
+docker build -t heroes-app . --no-cache
+
