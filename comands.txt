@@ -328,3 +328,9 @@ docker exec -it <8fc> bash
 cd etc/nginx/
 cd conf.d
 cat default.conf
+
+-- build image heroes-app
+docker build -t heroes-app . --no-cache
+
+-- runc container port 8080 with heroes-app image
+docker container run -p 8081:80 heroes-app 
