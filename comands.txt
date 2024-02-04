@@ -318,3 +318,13 @@ docker build -t moive30/docker-graphql:0.0.1 .
 
 -- run image docker-graphql in container
 docker container run -p 3001:3000 moive30/docker-graphql:0.0.1
+
+-- added and run nginx
+docker run --name some-nginx -d -p 8080:80 nginx:1.25.3
+
+-- inspect nginx
+docker exec -it <8fc> bash
+
+cd etc/nginx/
+cd conf.d
+cat default.conf
