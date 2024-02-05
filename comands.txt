@@ -340,3 +340,6 @@ docker build -t heroes-app . --no-cache
 
 -- run container with new config image
 docker container run -p 8081:80 heroes-app
+
+-- generate string base64 postgres = cG9zdGdyZXMNCg==
+echo -n postgres | base64
