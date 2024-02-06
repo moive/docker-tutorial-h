@@ -343,3 +343,30 @@ docker container run -p 8081:80 heroes-app
 
 -- generate string base64 postgres = cG9zdGdyZXMNCg==
 echo -n postgres | base64
+
+-- kubectl version
+kubectl version
+
+-- show ip cluster
+kubectl get all
+
+-- run
+kubectl apply -f postgres.config.yml
+kubectl apply -f postgres-secrets.yml
+kubectl apply -f postgres.yml
+
+--kubectl describe
+kubectl describe deployment.apps/postgres-deployment
+
+--kubectl logs
+kubectl logs pod/postgres-deployment-86c949477b-xjg86
+
+-- add pg-admin to cluster
+kubectl apply -f pg-admin-secrets.yml
+kubectl apply -f pg-admin.yml
+
+--show all cluster
+kubectl get all
+
+-- open pg-browser-default
+minikube service pg-admin-service
