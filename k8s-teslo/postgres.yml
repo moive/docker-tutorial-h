@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: postgres
-        image: postgres:16.1
+        image: postgres:15.1
         ports:
         - containerPort: 5432
         env:
@@ -25,7 +25,6 @@ spec:
             secretKeyRef:
               name: postgres-secrets
               key: DB_PASSWORD
-
 ---
 apiVersion: v1
 kind: Service
@@ -36,5 +35,6 @@ spec:
     app: postgres
   ports:
     - protocol: TCP
-      port: 5432 # port  1 to 65535
+      port: 5432 # cualquier puerto
       targetPort: 5432
+      
