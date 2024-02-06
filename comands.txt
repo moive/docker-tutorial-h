@@ -370,3 +370,13 @@ kubectl get all
 
 -- open pg-browser-default
 minikube service pg-admin-service
+
+-- display errors and success 
+kubectl describe pod/backend-deployment-597c9fd986-4tw5q
+
+-- display logs backend
+kubectl logs pod/backend-deployment-597c9fd986-4tw5q
+
+
+-- restar backend-deployment
+kubectl rollout restart deployment backend-deployment

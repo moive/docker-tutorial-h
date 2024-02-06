@@ -28,19 +28,19 @@ spec:
           value: "prod"
         - name: DB_NAME
           valueFrom:
-            ConfigMapKeyRef:
+            configMapKeyRef:
               name: postgres-config
-              value: DB_NAME
+              key: DB_NAME
         - name: DB_HOST
           valueFrom:
-            ConfigMapKeyRef:
+            configMapKeyRef:
               name: postgres-config
-              value: DB_HOST
+              key: DB_HOST
         - name: DB_PORT
           valueFrom:
-            ConfigMapKeyRef:
+            configMapKeyRef:
               name: postgres-config
-              value: DB_PORT
+              key: DB_PORT
         - name: DB_USERNAME
           valueFrom:
             secretKeyRef:
@@ -70,5 +70,5 @@ spec:
     - protocol: TCP
       port: 3000 # cualquier puerto
       targetPort: 3000
-      nodePort: 30300
+      nodePort: 30300 # port external
       
